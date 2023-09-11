@@ -4,10 +4,8 @@
   "description": "first rest API for shopping app ",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "bin":{
-    "execute": "server.js"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"nodemon server.js"
   },
   "keywords": [
     "node",
