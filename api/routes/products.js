@@ -31,14 +31,14 @@ const upload = multer({
     fileFilter: fileFilter
 }); 
 
-router.get('/',ProductsController.products_get_all);
+router.get('/',checkAuth,ProductsController.products_get_all);
 
-router.post('/',upload.single('productImage'),ProductsController.products_create_product);
+router.post('/',upload.single('productImage'),checkAuth,ProductsController.products_create_product);
 
-router.get('/:productId',ProductsController.products_get_product);
+router.get('/:productId',checkAuth,ProductsController.products_get_product);
 
-router.patch('/:productId',ProductsController.products_update_product);
+router.patch('/:productId',checkAuth,ProductsController.products_update_product);
 
-router.delete('/:productId',ProductsController.products_delete_product);
+router.delete('/:productId',checkAuth,ProductsController.products_delete_product);
 
 module.exports = router;
